@@ -1,0 +1,16 @@
+sqlmodel==0.0.22
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+pgvector==0.3.6
+python-dotenv==1.0.1
+
+dagster==1.12.14  
+dagster-webserver==1.12.14  
+
+# Data processing
+pandas==2.2.3
+openpyxl==3.1.5
+
+# Embeddings (Phase 4)
+sentence-transformers>=3.0.0
+langchain-text-splitters>=0.3.0

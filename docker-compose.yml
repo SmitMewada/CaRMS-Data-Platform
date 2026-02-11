@@ -1,0 +1,58 @@
+services:
+  # ========================
+  # PostgreSQL + pgvector
+  # ========================
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: carms_db
+    environment:
+      POSTGRES_DB: carms
+      POSTGRES_USER: carms_user
+      POSTGRES_PASSWORD: carms_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U carms_user -d carms"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ========================
+  # Dagster Pipeline
+  # ========================
+  dagster:
+    build:
+      context: .
+      dockerfile: dagster_pipeline/Dockerfile
+    container_name: carms_dagster
+    environment:
+      DATABASE_URL: postgresql://carms_user:carms_pass@db:5432/carms
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ========================
+  # FastAPI
+  # ========================
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: carms_api
+    environment:
+      DATABASE_URL: postgresql://carms_user:carms_pass@db:5432/carms
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

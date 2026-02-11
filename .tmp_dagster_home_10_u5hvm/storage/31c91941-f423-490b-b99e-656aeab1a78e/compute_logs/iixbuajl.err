@@ -1,0 +1,7 @@
+[32m2026-02-10 21:55:36 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - 19677 - LOGS_CAPTURED - Started capturing logs in process (pid: 19677).
+[32m2026-02-10 21:55:36 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - 19677 - raw_programs - STEP_START - Started execution of step "raw_programs".
+[32m2026-02-10 21:55:37 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - 19677 - raw_programs - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2026-02-10 21:55:37 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - raw_programs - Writing file at: /Users/smitmewada/Desktop/Projects/carms-data-platform/.tmp_dagster_home_10_u5hvm/storage/raw_programs using PickledObjectFilesystemIOManager...
+[32m2026-02-10 21:55:37 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - 19677 - raw_programs - ASSET_MATERIALIZATION - Materialized value raw_programs.
+[32m2026-02-10 21:55:37 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - 19677 - raw_programs - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2026-02-10 21:55:37 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 31c91941-f423-490b-b99e-656aeab1a78e - 19677 - raw_programs - STEP_SUCCESS - Finished execution of step "raw_programs" in 900ms.

@@ -1,0 +1,14 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.env
+.dagster/
+storage/
+history/
+.DS_Store
+*.md
+!dagster_pipeline/requirements.txt
+!api/requirements.txt

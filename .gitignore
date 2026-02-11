@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Environment
+.env
+
+# Docker
+pgdata/
+
+# IDE
+.vscode/
+.idea/
+
+.venv
